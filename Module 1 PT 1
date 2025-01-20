@@ -1,18 +1,20 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
 
-public class DisplayNameAndDateTime {
+public class Main {
     public static void main(String[] args) {
-        // Print your full name
-        System.out.println("Good day everyone. You better look out because my name is: Champagne Archibald Nickleberry the 16th");
+        // Print full name
+       System.out.println("Good day everyone. You better look out because my name is: Champagne Archibald Nickleberry the 16th");
 
-        // Get the current date and time
-        LocalDateTime currentDateTime = LocalDateTime.now();
-
-        // Format the date and time
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-        // Display the current date and time
-        System.out.println("Current Date and Time: " + currentDateTime.format(formatter));
+        // Get current date and time
+        Date currentDate = new Date();
+        
+        // Format date and time in Philippine Standard Time (PST)
+        SimpleDateFormat formatter = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss z");
+        formatter.setTimeZone(TimeZone.getTimeZone("Asia/Manila")); //Philippine Time Zone
+        
+        // Print current date and time 
+        System.out.println("Current Date and Time: " + formatter.format(currentDate));
     }
 }
