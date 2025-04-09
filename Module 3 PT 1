@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class GradeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your grade (A-F): ");
+        char grade = scanner.next().charAt(0);
+
+        switch (grade) {
+            case 'A': 
+                System.out.println("Fantastic!"); 
+                break;
+            case 'B': 
+                System.out.println("Good job!"); 
+                break;
+            case 'C': 
+                System.out.println("You passed, I guess."); 
+                break;
+            case 'D': 
+                System.out.println("Someone needs improvement. And it's not me."); 
+                break;
+            case 'F': 
+                System.out.println("WOW that sucks."); 
+                break;
+             default: 
+                System.out.println("Dude that's not even a real grade");
+        }
+
+        scanner.close(); // Closing the scanner
+    }
+}
